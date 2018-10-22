@@ -20,6 +20,16 @@ module.exports.bootstrap = async function(done) {
   //   return done();
   // }
   //
+
+  if (await Person.count() > 0) {
+    return done();
+}
+
+await Person.createEach([
+    { name: "Martin Choy", age: 23 },
+    { name: "Kenny Cheng", age: 22 }
+    // etc.
+]);
   // await User.createEach([
   //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
   //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
