@@ -113,4 +113,23 @@ search: async function (req, res) {
 
     return res.view('person/index', { persons: models });
 },
+
+
+// action - paginate
+paginate: async function (req, res) {
+
+    const qPage = Math.max(req.query.page - 1, 0) || 0;
+
+    const numOfItemsPerPage = 2;
+
+    var models = await Person.find({
+        limit: numOfItemsPerPage, 
+        skip: numOfItemsPerPage * qPage
+    });
+
+    var numOfPage = Math.ceil(await Person.count() / numOfItemsPerPage);
+
+    return res.view('person/paginate', { persons: models, count: numOfPage });
+},
+
 };
