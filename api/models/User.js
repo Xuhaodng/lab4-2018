@@ -9,6 +9,22 @@ module.exports = {
 
   attributes: {
 
+//  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
+//  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
+//  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+
+username: {
+  type: "string"
+},
+
+password: {
+  type: "string"
+},
+
+    supervises: {
+      collection: 'Person',
+      via: 'worksFor'
+    },
   }
 };
 

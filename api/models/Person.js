@@ -15,6 +15,10 @@ module.exports = {
     age: {
       type: "number"
     },
+    worksFor: {
+      collection: 'User',
+      via: 'supervises'
+    }
   },
   //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
   //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
@@ -42,5 +46,6 @@ module.exports = {
     return null;        // falsy
 
   },
+ 
 };
 
