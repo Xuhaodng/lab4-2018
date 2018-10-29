@@ -3,7 +3,15 @@
 <br><br>
 
 <form method="POST" action="/person/delete/<%=person.id %>">
-
+<input type="text" class="datepicker">
+<select>
+    <option value="dummy">Dummy</option>
+    <option value="Elements">Elements</option>
+    </select>
 <button class ="btn btn-danger" type="submit">Delete</button>
 
 </form>
+
+<script>
+    document.querySelector('option[value="Elements"]').selected="selected";
+    </script>

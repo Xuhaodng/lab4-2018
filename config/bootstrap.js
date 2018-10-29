@@ -36,6 +36,11 @@ await Person.createEach([
   //   // etc.
   // ]);
   // ```
+  await User.createEach([
+    { "username": "admin", "password": "123456" },
+    { "username": "boss", "password": "123456" }
+    // etc.
+]);
 
   // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
   // (otherwise your server will never lift, since it's waiting on the bootstrap)
